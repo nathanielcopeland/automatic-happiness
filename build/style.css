@@ -2,6 +2,9 @@ html,
 body {
   height: 100vh;
 }
+img {
+  max-width: 100%;
+}
 body {
   margin: 0;
   padding: 0;
@@ -69,7 +72,8 @@ header h1 {
 header #logout {
   color: white;
   text-decoration: none;
-  padding: 15px 5px;
+  padding: 5px 5px;
+  max-width: 40px;
 }
 header #remove {
   border: 1px solid transparent;
@@ -122,4 +126,16 @@ footer {
   text-decoration: line-through;
   text-decoration-color: #b291dd;
   color: #dbcbef;
+}
+@media only screen and (max-width: 786px) {
+  .overlay .authform {
+    max-width: 95%;
+  }
+  header h1 {
+    font-size: 1.2em;
+  }
+  header #username {
+    font-size: 1.2em;
+    margin-left: 10px;
+  }
 }

@@ -137,9 +137,12 @@ function signUserUp(evt){
 function logUserOut(evt){
     firebase.auth().signOut().then(function() {
     displayUserName(false);
+    //clear the task array
+    TaskArray = [];
     }).catch(function(error) {
     // An error happened.
     });
+    
 }
 
 function signUserIn(evt){
@@ -181,9 +184,16 @@ function removeDone(){
         if(item.status == 1){
             //splice removes item from array
             TaskArray.splice(i,1);
-            saveTasks();
+            let taskid = item.id;
+            let userid = app.userid;
+            let path = 'lists/' + userid + '/' + taskid;
+            firebase.database().ref(path).remove().then(function(response){
+                //response of database...
+            });
+            // saveTasks();
             renderTaskList();
         }
+        
     }
     toggleShowButton();
 }

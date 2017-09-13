@@ -16,6 +16,10 @@
 html,body{
     .fullheight;
 }
+
+img{
+    max-width: 100%;
+}
 body{
     .reset;
     font-family:@main-font-family;
@@ -81,7 +85,8 @@ header{
     #logout{
         color:white;
         text-decoration:none;
-        padding:15px 5px;
+        padding:5px 5px;
+        max-width: 40px;
     }
     #remove{
         border:1px solid transparent;
@@ -101,6 +106,7 @@ header{
     overflow-y: auto;
     max-height: ~ "calc(100vh - 100px)";
 }
+
 footer{
     height:@header-height;
     background-color:@header-bg;
@@ -133,5 +139,22 @@ footer{
         text-decoration:line-through;
         text-decoration-color:lighten(@main-color,30%);
         color:lighten(@main-color,45%);
+    }
+}
+
+@media only screen and (max-width:786px){
+    .overlay{
+        .authform{
+            max-width:95%;
+        }
+    }
+    header{
+        h1{
+            font-size:1.2em;
+        }
+        #username{
+            font-size:1.2em;
+            margin-left:10px;
+        }
     }
 }
